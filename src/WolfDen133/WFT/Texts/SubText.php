@@ -84,7 +84,7 @@ class SubText
                 EntityMetadataProperties::BOUNDING_BOX_WIDTH => new FloatMetadataProperty(0.0),
                 EntityMetadataProperties::BOUNDING_BOX_HEIGHT => new FloatMetadataProperty(0.0),
                 EntityMetadataProperties::NAMETAG => new StringMetadataProperty($this->text),
-                EntityMetadataProperties::VARIANT => new IntMetadataProperty(TypeConverter::getInstance()->getBlockTranslator()->internalIdToNetworkId(VanillaBlocks::AIR()->getStateId())),
+                EntityMetadataProperties::VARIANT => new IntMetadataProperty($player->getNetworkSession()->getTypeConverter()->getBlockTranslator()->internalIdToNetworkId(VanillaBlocks::AIR()->getStateId())),
                 EntityMetadataProperties::ALWAYS_SHOW_NAMETAG => new ByteMetadataProperty(1),
             ],
             new PropertySyncData([], []),
